@@ -5,10 +5,12 @@ import router from './router'
 import store from './store'
 // 引入reset.css
 import "./assets/css/reset.css"
-// 引入VueAwesomeSwiper
-import VueAwesomeSwiper from "vue-awesome-swiper"
-import "swiper/dist/css/swiper.css"
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+// 引入mint-ui全部组件
+import 'mint-ui/lib/style.css'
+import { Button } from 'mint-ui';
+
+Vue.component(Button.name, Button);
+
 
 Vue.config.productionTip = false
 

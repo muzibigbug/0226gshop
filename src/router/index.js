@@ -7,6 +7,10 @@ import Search from "../views/Search/Search.vue"
 import Order from "../views/Order/Order.vue"
 import Profile from "../views/Profile/Profile.vue"
 import Login from "../views/Login/Login.vue"
+import Shop from "../views/Shop/Shop.vue"
+import ShopGoods from "../views/Shop/ShopGoods/ShopGoods.vue"
+import ShopRatings from "../views/Shop/ShopRatings/ShopRatings.vue"
+import ShopInfo from "../views/Shop/ShopInfo/ShopInfo.vue"
 
 Vue.use(VueRouter)
 
@@ -52,6 +56,28 @@ const routes = [
       showFooter: true
     }
   },
+  {
+    path: '/shop',
+    component: Shop,
+    children: [
+      {
+        path: 'goods',
+        component: ShopGoods
+      },
+      {
+        path: 'ratings',
+        component: ShopRatings
+      },
+      {
+        path: 'info',
+        component: ShopInfo
+      },
+      {
+        path: '',
+        redirect: 'goods'
+      },
+    ]
+  }
   
   // {
   //   path: '/about',
